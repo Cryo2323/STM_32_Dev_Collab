@@ -365,15 +365,15 @@ uint8_t duty_cycle_ramp(void)
 	static uint32_t now = 0;
 
 	now = HAL_GetTick();
-	if (HAL_GetTick() - last_time > 300)
-	{
-		if (pwm<=255){
-		pwm = pwm + 1;
-		last_time = HAL_GetTick();
-		return pwm;
+	if (pwm <= 255) {
+		if (HAL_GetTick() - last_time > 500)
+		{
+			pwm = (pwm + 1 > 255) ? 255 : (pwm + 10);
+			last_time = HAL_GetTick();
+
 		}
 	}
-
+	return pwm;
 
 }
 /* USER CODE END 4 */
