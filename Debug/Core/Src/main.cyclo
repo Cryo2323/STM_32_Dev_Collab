@@ -3,4 +3,4 @@
 ../Core/Src/main.c:192:13:MX_TIM1_Init	7
 ../Core/Src/main.c:274:13:MX_GPIO_Init	1
 ../Core/Src/main.c:361:9:duty_cycle_ramp	3
-../Core/Src/main.c:385:6:Error_Handler	1
+../Core/Src/main.c:383:6:Error_Handler	1

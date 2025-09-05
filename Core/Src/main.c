@@ -362,13 +362,11 @@ uint8_t duty_cycle_ramp(void)
 {
 	static uint8_t pwm = 0;
 	static uint32_t last_time = 0;
-	static uint32_t now = 0;
 
-	now = HAL_GetTick();
 	if (pwm <= 255) {
-		if (HAL_GetTick() - last_time > 500)
+		if (HAL_GetTick() - last_time > 100)
 		{
-			pwm = (pwm + 1 > 255) ? 255 : (pwm + 10);
+			pwm = (pwm + 1 > 255) ? 255 : (pwm + 1);
 			last_time = HAL_GetTick();
 
 		}
